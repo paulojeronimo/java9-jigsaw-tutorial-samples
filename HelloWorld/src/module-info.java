@@ -1,1 +1,0 @@
-module com.paulojeronimo.helloworld { }
