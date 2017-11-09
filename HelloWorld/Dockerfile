@@ -1,4 +1,4 @@
 FROM buildpack-deps:jessie-curl
-COPY helloworld/ /home/helloworld/
+COPY jre/ /home/helloworld/
 WORKDIR /home/helloworld
 ENTRYPOINT ["bin/hello"]

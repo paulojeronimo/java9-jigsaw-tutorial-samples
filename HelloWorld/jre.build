@@ -1,0 +1,9 @@
+#!/bin/bash
+set -x
+
+rm -rf jre
+jlink -p $JAVA_HOME/jmods:mlib \
+  --add-modules com.paulojeronimo.utils,com.paulojeronimo.services,com.paulojeronimo.providers,com.paulojeronimo.helloworld \
+  --output jre \
+  --strip-debug --compress 2 --launcher hello=com.paulojeronimo.helloworld
+patch jre/bin/hello < ../../patches/hello.patch
